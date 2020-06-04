@@ -1,16 +1,21 @@
 import React, {useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { withRouter } from 'react-router-dom';
-import UploadService from "./Upload-service";
+import OpenService from './Open-service'
 
 
 const ModalExample = (props) => {
-  console.log(props.username)
-  console.log(props.userkey)
-
+  
   const [modal, setModal] = useState(false);
 
   const toggle = () => setModal(!modal);
+
+  const openupload= () => {
+    console.log(props.username)
+    console.log(props.userkey)
+
+    OpenService.openupload(props.username, props.userkey)
+  }
 
   return (
     <div>
@@ -24,7 +29,7 @@ const ModalExample = (props) => {
             파일로 api 서비스를 생성합니다.
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={toggle}>API START</Button>{' '}
+          <Button color="primary" onClick={openupload}>API START</Button>{' '}
           <Button color="secondary" onClick={toggle}>Cancel</Button>
         </ModalFooter>
       </Modal>
