@@ -14,7 +14,7 @@ const ModalExample = (props) => {
     console.log(props.username)
     console.log(props.userkey)
 
-    OpenService.openupload(props.username, props.userkey)
+    OpenService.openupload(props.username, props.userkey);
   }
 
   return (
@@ -29,7 +29,7 @@ const ModalExample = (props) => {
             파일로 api 서비스를 생성합니다.
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={openupload}>API START</Button>{' '}
+          <Button color="primary" onClick={openupload} >API START</Button>{' '}
           <Button color="secondary" onClick={toggle}>Cancel</Button>
         </ModalFooter>
       </Modal>
